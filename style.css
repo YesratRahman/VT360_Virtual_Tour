@@ -1,0 +1,233 @@
+/* credit: w3schools.com */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* The Lobby Modal (background) */
+.modalvideo,
+.outCC,
+.ujimodal-video,
+.modalgallery,
+.outModal, 
+.yatesmodalgallery,
+.pedwall,
+.yateswall,
+.ujioutlogomodal,
+.modalujigallery,
+.modalujimeangallery,
+.resourcemodal,
+.contributormodal{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.65); /* Black w/ opacity */
+}
+
+/* Modal Content (image/video) */
+.modal-gallery,
+.modal-video,
+.modal-ujivideo,
+.outside-modal,
+.outcc-modal,
+.modal-gallery-yates,
+.modal-ped-wall,
+.modal-yates-wall,
+.modal-uji-outlogo,
+.uji-modal-gallery,
+.ujimean-modal-gallery{
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+
+.modal-resource {
+ 
+  margin: auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 700px;
+  display: block;
+  font-size: 20px;
+  line-height: 2;
+  height: auto;
+  text-align: center;
+}
+
+
+.modal-contributor {
+ 
+  margin: auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 700px;
+  display: block;
+  font-size: 20px;  
+  height: auto;
+  text-align: center;
+}
+
+.name, h1, a {
+  color: #FFFFFF;
+}
+a{
+  font-size: 17.5px;  
+}
+
+.bio {
+  color: #FFFFFF;
+  font-size: 17px;
+}
+
+/* Caption of Modal Image */
+#caption,
+#captionoutCC,
+#caption2,
+#caption3,
+#captionpedwall,
+#captionyateswall,
+#captionujioutmodal,
+#ujiCaption,
+#ujimeanCaption{
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 10px 0;
+  height: auto;
+  font-size: 20px;
+  line-height: 2;
+}
+
+
+
+/* The Close Button */
+.closegallery,
+.closevideo,
+.closeoutmodal,
+.closeoutCC,
+.closeujivideo,
+.closeyatesgallery,
+.closepedwall,
+.closeyateswall,
+.closeujioutmodal,
+.closeujigallery,
+.closeujimeangallery,
+.closeresource,
+.closecontributor{
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 50px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.closegallery:hover,
+.closegallery:focus,
+.closeujivideo:hover,
+.closeujivideo:focus,
+.closevideo:hover,
+.closevideo:focus,
+.closeoutmodal:hover,
+.closeoutmodal:focus,
+.closeoutCC:hover,
+.closeoutCC:focus,
+.closeyatesgallery:hover,
+.closeyatesgallery:focus,
+.closepedwall:hover,
+.closepedwall:focus,
+.closeyateswall:hover,
+.closeyateswall:focus,
+.closeujioutmodal:hover,
+.closeujioutmodal:focus,
+.closeujigallery:hover,
+.closeujigallery:focus,
+.closeujimeangallery:hover,
+.closeujimeangallery:focus,
+.closeresource:hover,
+.closeresource:focus,
+.closecontributor:hover,
+.closecontributor:focus{
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Next & previous buttons */
+.prev2, .prev1, .prev3, .prev4 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 50px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.next2, .next1, .next3, .next4 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 50px;
+  
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next2, .next1, .next3, .next4 {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev2:hover,
+.next2:hover,
+.prev1:hover,
+.next1:hover,
+.next3:hover,
+.prev3:hover,
+.next4:hover,
+.prev4:hover{
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+.modal-gallery,
+.modal-video,
+.modal-ujivideo,
+.outside-modal,
+.outcc-modal,
+.modal-gallery-yates,
+.modal-ped-wall,
+.modal-yates-wall {
+    width: 100%;
+  }
+}

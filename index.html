@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Peddrew-Yates Hall 360 Virtual Tour </title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component/dist/aframe-event-set-component.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="outside.js"></script>
+    <script src="outside_modal.js"></script>
+    <script src="lobby.js"></script>
+    <script src="ujima1.js"></script>
+    <script src="ujima2.js"></script>   
+    <script src="outcc.js"></script>
+    <script src="lobby_modal_img_gallery_ped.js"></script>
+    <script src="lobby_modal_img_gallery_yates.js"></script>
+    <script src="lobby_modal_wallframe_yates.js"></script>
+    <script src="lobby_modal_wallframe_ped.js"></script>
+    <script src="lobby_modal_vid.js"></script>
+    <script src="ujima_modal_vid.js"></script>
+    <script src="ujima_inside_modal_img_gallery01.js"></script> 
+    <script src="ujima_inside_modal_img_gallery02.js"></script> 
+    <script src="ujima_outside_modal_logo.js"></script>
+    <script src="start.js"></script>
+    <script src="end.js"></script>
+    <script src="end_modal_resource.js"></script>
+    <script src="end_modal_contributor.js"></script>
+    <script>
+      sessionStorage.setItem("audio1", "false");
+    </script>
+    <script>
+      sessionStorage.setItem("audio2", "false");
+    </script>
+    <script>
+      sessionStorage.setItem("audio3", "false");
+    </script>
+    <script>
+      sessionStorage.setItem("audio4", "false");
+    </script>
+
+    <script>
+      sessionStorage.setItem("audio5", "false");
+    </script>
+
+    <script>
+      sessionStorage.setItem("audio6", "false");
+    </script>
+    
+    <script>
+      sessionStorage.setItem("audio7", "false");
+    </script>
+
+  </head>
+
+  <body>
+    <a-scene vr-mode-ui="enabled: false" cursor="rayOrigin: mouse" start>
+      <a-assets>
+        <video
+          id="pylobby"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FLobbyNoAudio%20(1).mp4?v=1604619454130"
+          loop="true"
+          crossorigin="anonymous"
+          webkit-playsinline
+          playsinline
+        ></video>
+
+        <video
+          id="entrance"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FOutsideNoAudio%20(1).mp4?v=1604619430687"
+          loop="true"
+          crossorigin="anonymous"
+          webkit-playsinline
+          playsinline
+        ></video>
+
+        <video
+          id="ujiin"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FUjimaInNoAudio%20(1).mp4?v=1604619429678"
+          loop="true"
+          crossorigin="anonymous"
+          webkit-playsinline
+          playsinline
+        ></video>
+
+        <video
+          id="ujiout"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FUjimaOutNoAudio.mp4?v=1604618737297"
+          loop="true"
+          crossorigin="anonymous"
+          webkit-playsinline
+          playsinline
+        ></video>
+        
+        <video
+          id="out2"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FOutside2NoAudio.mp4?v=1607543921154"
+          loop="true"
+          crossorigin="anonymous"
+          webkit-playsinline
+          playsinline
+        ></video>
+
+        <img
+          id="pedcadett"
+          crossorigin="anonymous"
+          src="https://cdn.glitch.com/5fb69d5a-3622-43ab-8d6e-54b70cddb80f%2Fpedcadet800.jpg?v=1602971317971"
+        />
+
+        <img
+          id="cc"
+          crossorigin="anonymous"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2Fcc-png-5.png?v=1607050900759"
+        />
+
+        <img
+          id="yates1958"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2Fcharles%20yates%2C%201958.jpg?v=1605771052982"
+          crossorigin="anonymous"
+        />
+
+        <img
+          id="pedbowling"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FPeddrew%20Bowling.jpg?v=1605771052928"
+          crossorigin="anonymous"
+        />
+
+        <img
+          id="yatesgraduation"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FCharles%20Yates%20at%20Graduation%2C%201958%20.jpg?v=1605771052675"
+          crossorigin="anonymous"
+        />
+
+        <img
+          id="floydpedyates"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FFloyd%20Wilson%2C%20Irving%20Peddrew%20and%20Charles%20Yates%20.jpg?v=1605771052807"
+          crossorigin="anonymous"
+        />
+
+        <img
+          id="outmap"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FOutside_IMG.jpg?v=1605492058732"
+          crossorgin="anonymous"
+        />
+
+        <img
+          id="lobbycc"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FLobbyCC.png?v=1607052757463"
+          crossorigin="anonymous"
+        />
+
+        <img
+          id="lobbymap"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FLobby_IMG.jpg?v=1605492067035"
+          crossorgin="anonymous"
+        />
+
+        <img
+          id="ujioutmap"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FUjiOut_IMG.jpg?v=1605492073095"
+          crossorgin="anonymous"
+        />
+
+        <img
+          id="ujiinmap"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FUjiIn_IMG.jpg?v=1605492077072"
+          crossorgin="anonymous"
+        />
+        
+        <img
+          id="endmap"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FExtra_IMG.jpg?v=1607550955595"
+          crossorgin="anonymous"
+        />
+
+        
+        <audio
+          id="oAudio"
+          src="https://cdn.glitch.com/bc6ea018-f915-4ff5-be07-5ffd4e78cd22%2FEntrance_Audio.m4a?v=1606786779894"
+          crossorigin="anonymous"
+        ></audio>
+
+        <audio
+          id="lAudio"
+          src="https://cdn.glitch.com/bc6ea018-f915-4ff5-be07-5ffd4e78cd22%2FLobby_Audio.m4a?v=1606787076453"
+          crossorigin="anonymous"
+        ></audio>
+
+        <audio
+          id="uAudio"
+          src="https://cdn.glitch.com/bc6ea018-f915-4ff5-be07-5ffd4e78cd22%2FUjima_Outside.m4a?v=1606787455549"
+          crossorigin="anonymous"
+        ></audio>
+
+        <audio
+          id="uInAudio"
+          src="https://cdn.glitch.com/bc6ea018-f915-4ff5-be07-5ffd4e78cd22%2FUjima_Inside.m4a?v=1606787458402"
+          crossorigin="anonymous"
+        ></audio>
+
+        <audio
+          id="pedaudio"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FPaddrew_Description.m4a?v=1606787513212"
+          crossorigin="anonymous"
+        ></audio>
+
+        <audio
+          id="yatesaudio"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FYates_Description.m4a?v=1606787513683"
+          crossorigin="anonymous"
+        ></audio>
+        
+        <audio
+          id="endaudio"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FAudio%209.m4a?v=1607612607939"
+          crossorigin="anonymous"
+        ></audio>
+
+        <!-- Music: www.bensound.com -->
+        <audio
+          id="music"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2Fbensound-memories%20(mp3cut.net).mp3?v=1605506641570"
+          crossorigin="anonymous"
+        ></audio>
+
+        <img
+          id="hotspot"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2F2087dfa6-bd02-4451-a189-36095a66f386_up-arrow.png?v=1604552256859"
+          crossorigin="anonymous"
+        />
+
+        <img
+          id="info"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2Fkisspng-computer-icons-icon-design-information-hunde-5b4b4cc4cfb2f5.7756498215316615088508.png?v=1604554450895"
+          crossorigin="anonymous"
+        />
+        <!-- Single Photo Icon-->
+        <img
+          id="photoIcon"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FphotoIcon3.png?v=1607291646765"
+          crossorigin="anonymous"
+        />
+        <!--Meaning Icon-->
+        <img
+          id="meaningIcon"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FmeaningIcon.png?v=1607293223705"
+          crossorigin="anonymous"
+        />
+
+        <!--Gallery Icon-->
+        <img
+          id="galleryIcon"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FgalleryIcon2.png?v=1607292253200"
+          crossorigin="anonymous"
+        />
+
+        <!--Video Icon-->
+        <img
+          id="videoIcon"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FvideoIcon.png?v=1607291050277"
+          crossorigin="anonymous"
+        />
+
+        <!-- pictures starts here-->
+        <img
+          id="ujimeanPic"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FujimaOutside-2.png?v=1607294053034"
+          crossorigin="anonymous"
+        />
+
+        <!-- Start: Ujima Gallery pic-->
+        <img
+          id="ujiPic-1"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FujiActi1.jpg?v=1607306594922"
+          crossorigin="anonymous"
+        />
+
+        <img
+          id="ujiPic2"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FujiActi2.jpg?v=1607306626857"
+          crossorigin="anonymous"
+        />
+
+        <img
+          id="ujiPic3"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FujiActi3.jpg?v=1607306628541"
+          crossorigin="anonymous"
+        />
+
+        <img
+          id="ujiPic4"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FujiActi4.jpg?v=1607306630413"
+          crossorigin="anonymous"
+        />
+
+        <img
+          id="ujiPic5"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FujiActi5.jpg?v=1607306633205"
+          crossorigin="anonymous"
+        />
+
+        <img
+          id="ujiPic6"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FujiActi6-mentorTraining.JPG?v=1607306638340"
+          crossorigin="anonymous"
+        />
+        <img
+          id="ujiPic7"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FujiActi7.jpg?v=1607306639985"
+          crossorigin="anonymous"
+        />
+
+        <!-- End: Ujima Gallery pic-->
+      </a-assets>
+
+      <!-- Cursor -->
+      <a-camera look-controls wasd-controls-enabled="false">
+        <a-image
+          id="map"
+          src="#outmap"
+          position="0.83 0.60 -1.0"
+          rotation="0 0 0"
+          scale="0.55 0.33 0"
+          visible="false"
+        >
+        </a-image>
+
+        <!-- CC Button -->
+        <a-image
+          id="CC"
+          src="#cc"
+          position="1 0.35 -1.0"
+          scale="0.1 0.1 0"
+          event-set__mouseenter="scale: 0.13 0.13 0.03"
+          event-set__mouseleave="scale: 0.1 0.1 0"
+          visible="false"
+          modcc
+        >
+        </a-image>
+
+        <!-- CC Modal -->
+        <!-- Source: https://vt.edu/about/locations/buildings/peddrew-yates-residence-hall.html#:~:text=Peddrew%2DYates%20Hall%20was%20built,of%20Virginia%20Tech%20in%201958 --> 
+        <div class="outCC">
+          <span class="closeoutCC">&times;</span>
+          <img
+            class="outcc-modal"
+            id="outsideCC"
+            src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FOutsideCC.png?v=1607052748607"
+            style="width:0px;height:0px;"
+            alt="Welcome to the Virtual 360 Tour of Peddrew-Yates Hall which is significant to the Africa-American community at Virginia Tech. 
+                 This hall was built in 1998. In 2003, the hall was named as Peddrew-Yates during the 50th anniversary celebration of black students in honor of Irving Linwood Peddrew III, the first Black student to enroll, and Charlie Lee Yates, the first Black graduate from Virginia Tech. 
+                 In this interactive virtual tour you will experience immersive 360 videos in the background while you get to interact with different aspects of Peddrew-Yates Hall. 
+                 The purpose of this virtual tour is to honor and showcase the history of the African-American community. 
+                 Feel free to explore and look around the building and you are welcome to click on the arrow near the entrance to take you to the lobby."
+          />
+           <div id="caption3"></div>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+        </div>
+
+        <!-- Home page (click here to start tour) -->
+        <a-plane
+          id="clickherecaption"
+          position="0 0 -1.0"
+          rotation="0 0 0"
+          height="3"
+          width="3.6"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FPaddrew-Yates-Hall.jpg?v=1607227851444"
+          text="value: Welcome to Virtual Tour of Peddrew-Yates Hall\n Click on the screen to start the tour!;  width: 2; align: center;"
+          visible="true"
+        ></a-plane>
+      </a-camera>
+
+      <a-videosphere id="vid" src="#entrance" autoplay="true"></a-videosphere>
+
+      <!-- Outside Scene Elements -->
+      <a-entity id="outsideElements" class="out" visible="false">
+        <!-- Go outside to lobby -->
+        <a-image
+          id="outToLob"
+          src="#hotspot"
+          position="0.065 68.393 0.030"
+          rotation="3 45 0"
+          scale="3.8 3.8 1"
+          event-set__mouseenter="scale: 5 5 2.2"
+          event-set__mouseleave="scale: 3.8 3.8 1"
+          lobby
+        >
+        </a-image>
+        <a-plane
+          id="OutToLobCaption"
+          position="0.065 68.393 0.030"
+          rotation="0 -130 0"
+          height=".18"
+          width=".6"
+          color="#191817"
+          text="value: Enter to Lobby; width: 2; align: center"
+        ></a-plane>
+        <!-- End of outside to lobby -->
+
+        <!-- Outside Scene Paddrew-Yates Picture Modal -->
+        <div class="outModal">
+          <span class="closeoutmodal">&times;</span>
+          <img
+            class="outside-modal"
+            id="PaYaOutsidePic"
+            src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FpedyatesOutside.jpg?v=1606882658766"
+            style="width:700px;height:500px;"
+            alt="Peddrew (right) and Yates (left) in front of Peddrew-Yates Hall"
+          />
+          <div id="captionoutCC"></div>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+        </div>
+
+        <a-image
+          id="PaYaOutsidePicIcon"
+          src="#photoIcon"
+          position="0.065 68.393 0.030"
+          scale="0.4 0.4 0.4"
+          rotation="0 -150 0"
+          event-set__mouseenter="scale: 0.6 0.6 1.1"
+          event-set__mouseleave="scale: 0.5 0.5 1"
+          modout
+        >
+        </a-image>
+
+ 
+        <!-- End of Outside Scene Paddrew-Yates Picture Modal -->
+      </a-entity>
+
+      <!-- Lobby Scene Elements -->
+      <!-- Source: https://vt.edu/about/locations/buildings/peddrew-yates-residence-    hall.html#:~:text=Peddrew%2DYates%20Hall%20was%20built,of%20Virginia%20Tech%20in%201958 --> 
+      <a-entity id="lobbyElements" class="lob" visible="false">
+        <!-- Modal: Peddrew Photo Gallery -->
+        <div class="modalgallery">
+          <span class="closegallery" style="display: none;">&times;</span>
+          <img
+            class="modal-gallery"
+            id="pedtranscript"
+            src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2Fkisspng-computer-icons-icon-design-information-hunde-5b4b4cc4cfb2f5.7756498215316615088508.png?v=1604554450895"
+            style="width:0px;height:0px;"
+            alt="In September of 1953, Irving Peddrew III of Hampton, VA became the first black student admitted to Virginia Tech, one of over 3,322 students. 
+                 Majoring in electrical engineering, Peddrew was permitted to take classes, but was categorized as a “day military student” and was prohibited from living or eating on campus. 
+                 Although Peddrew recalls no overt instances of racism on campus, he described a strong undertone of exclusion. 
+                 After 3 years of experiencing marginalization, Peddrew left Virginia Tech without graduating. He decided to continue his education in California. 
+                 He enrolled in some courses at Santa Monica City College and took acting classes in Los Angeles. 
+                 He got a job as a draftsman for an aerospace firm, Summers Gyroscope. 
+                 In 2003, VT passed a resolution renaming New Residence Hall West as Peddrew-Yates Hall. 
+                 In 2016, Irving Peddrew III was presented with an honorary degree in electrical engineering at the University’s Commencement Ceremony. "
+          />
+
+          <a class="prev2" style="display: none;">&#10094;</a>
+          <a class="next2" style="display: none;">&#10095;</a>
+
+          <div id="caption"></div>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+          
+        </div>
+
+        <a-image
+          id="image-gallery-hotspot"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FgalleryIcon2.png?v=1607292253200"
+          position="0.065 68.393 0.030"
+          scale="0.5 0.5 1"
+          rotation="0 270 0"
+          event-set__mouseenter="scale: 0.6 0.6 1.1"
+          event-set__mouseleave="scale: 0.5 0.5 1"
+          modpedgallery
+        >
+        </a-image>
+        <!-- End of Modal: Peddrew Photo Gallery -->
+
+        <!-- Modal: Yates Photo Gallery -->
+        <!-- Source: https://vt.edu/about/locations/buildings/peddrew-yates-residence-    hall.html#:~:text=Peddrew%2DYates%20Hall%20was%20built,of%20Virginia%20Tech%20in%201958 --> 
+        <div class="yatesmodalgallery">
+          <span class="closeyatesgallery" style="display: none;">&times;</span>
+          <img
+            class="modal-gallery-yates"
+            id="yatestranscript"
+            src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2Fkisspng-computer-icons-icon-design-information-hunde-5b4b4cc4cfb2f5.7756498215316615088508.png?v=1604554450895"
+            style="width:0px;height:0px;"
+            alt="Charlie Lee Yates was the first African-American Student to graduate from Virginia Tech. 
+                 He was one of six honors graduates in mechanical engineering in 1958. 
+                 A graduate of Booker T. Washington High school in Norfolk; he enrolled in the Engineering School and the Corps of Cadets in 1954. 
+                 He not only graduated with honors in four years, but also served as an officer in two engineering groups on campus, Tau Beta Pi and Pi Tau Sigma. 
+                 After graduating, Yates went on to earn his masters degree from California Tech and a Ph.D. from Johns Hopkins. 
+                 Dr. Yates returned to Virginia Tech in 1979 to serve on the faculty of the Department of Mechanical Engineering (1979-1983). 
+                 He left Tech in 1983 and returned in July of 1987 as an associate professor in the department of Aerospace and Ocean Engineering."
+          />
+
+          <a class="prev1" style="display: none;">&#10094;</a>
+          <a class="next1" style="display: none;">&#10095;</a>
+
+          <div id="caption2"></div>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+        </div>
+
+        <a-image
+          id="image-gallery-hotspot-yates"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FgalleryIcon2.png?v=1607292253200"
+          position="0.065 68.393 0.030"
+          scale="0.5 0.5 1"
+          rotation="0 270 0"
+          event-set__mouseenter="scale: 0.6 0.6 1.1"
+          event-set__mouseleave="scale: 0.5 0.5 1"
+          modyatesgallery
+        >
+        </a-image>
+        <!-- End of Modal: Yates Photo Gallery -->
+
+        <!-- Modal: Peddrew Wall Hanging Frame -->
+        <div class="pedwall">
+          <span class="closepedwall">&times;</span>
+          <img
+            class="modal-ped-wall"
+            id="pwall"
+            src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FIMG-4902.jpg?v=1607351836406"
+            style="width:500px;height:600px;"
+            alt="   "
+          />
+          <div id="captionpedwall"></div>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+        </div>
+
+        <a-image
+          id="hotspot-ped-wall"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FmeaningIcon.png?v=1607293223705"
+          position="0.065 68.393 0.030"
+          scale="0.5 0.5 1"
+          rotation="0 270 0"
+          event-set__mouseenter="scale: 0.6 0.6 1.1"
+          event-set__mouseleave="scale: 0.5 0.5 1"
+          modpedwall
+        >
+        </a-image>
+        <!-- End of Modal: Peddrew Wall Hanging Frame -->
+
+        <!-- Modal: Yates Wall Hanging Frame -->
+        <div class="yateswall">
+          <span class="closeyateswall">&times;</span>
+          <img
+            class="modal-yates-wall"
+            id="ywall"
+            src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FIMG-4899.jpg?v=1607351836619"
+            style="width:500px;height:600px;"
+            alt="   "
+          />
+          <div id="captionyateswall"></div>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+        </div>
+
+        <a-image
+          id="hotspot-yates-wall"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FmeaningIcon.png?v=1607293223705"
+          position="0.065 68.393 0.030"
+          scale="0.5 0.5 1"
+          rotation="0 270 0"
+          event-set__mouseenter="scale: 0.6 0.6 1.1"
+          event-set__mouseleave="scale: 0.5 0.5 1"
+          modyateswall
+        >
+        </a-image>
+        <!-- End of Modal: Yates Wall Hanging Frame -->
+
+        <!-- Modal: YT Video Peddrew being honored -->
+        <div class="modalvideo">
+          <span class="closevideo">&times;</span>
+          <iframe
+            class="modal-video"
+            width="1000"
+            height="500"
+            src="https://www.youtube.com/embed/JIAnW6TUaoE"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <a-image
+          id="video-hotspot"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FyouTubeIcon.png?v=1607290916352"
+          position="0.065 68.393 0.030"
+          scale="0.5 0.5 1"
+          rotation="0 0 0"
+          event-set__mouseenter="scale: 0.6 0.6 1.1"
+          event-set__mouseleave="scale: 0.5 0.5 1"
+          mod2
+        >
+        </a-image>
+        <!-- End of Modal: YT Video Peddrew being honored -->
+
+        <!-- Takes you from Lobby to Outside  -->
+        <a-image
+          id="lobToOut"
+          src="#hotspot"
+          position="0.065 68.393 0.030"
+          rotation="3 135 0"
+          scale="8 7 1"
+          event-set__mouseenter="scale: 10 9 3"
+          event-set__mouseleave="scale: 8 7 1"
+          outside
+        >
+        </a-image>
+        <a-plane
+          id="LobToOutCaption"
+          position="2.811 0.67 -5.80"
+          rotation="0 -400 0"
+          height=".2"
+          width=".9"
+          color="#191817"
+          text="value: Exit to Outside; width: 2.8; align: center"
+        ></a-plane>
+        <!-- End of Takes you from Lobby to Outside  -->
+
+        <!-- Take you from Lobby to Ujima Outside -->
+        <a-image
+          id="lobToUjiOut"
+          src="#hotspot"
+          position="0.065 68.393 0.030"
+          rotation="3 20 0"
+          scale="3 3 1"
+          event-set__mouseenter="scale: 3.5 3.5 1.5"
+          event-set__mouseleave="scale: 3 3 1"
+          ujima1
+        > 
+        </a-image>
+        <a-plane
+          id="LobToUjiOutCaption"
+          position="1.00 .5 3.610"
+          rotation="0 185 0"
+          height=".18"
+          width=".9"
+          color="#191817"
+          text="value: Enter to Ujima Entrance; width: 2; align: center"
+        ></a-plane>
+        <!-- End of Take you from Lobby to Ujima Outside -->
+      </a-entity>
+
+      
+      <!-- Ujima Outside Scene Elements -->
+      <a-entity id="ujima1Elements" class="uji1" visible="false">
+        <!-- Takes you from Ujima Outside to Lobby  -->
+        <a-image
+          id="ujiOutToLob"
+          src="#hotspot"
+          position="0.065 68.393 0.030"
+          rotation="3 45 0"
+          scale="1 1 1"
+          event-set__mouseenter="scale: 1.3 1.3 1.3"
+          event-set__mouseleave="scale: 1 1 1"
+          lobby
+        >
+        </a-image>
+        <a-plane
+          id="UjiOutToLobCaption"
+          position="0.065 68.393 0.030"
+          rotation="0 75 0"
+          height=".18"
+          width=".6"
+          color="#191817"
+          text="value: Exit to Lobby; width: 2; align: center"
+        ></a-plane>
+        <!-- End of Takes you from Ujima Outside to Lobby  -->
+
+        <!-- Takes you from Ujima Outside to Ujima Inside  -->
+        <a-image
+          id="ujiOutToUjiIn"
+          src="#hotspot"
+          position="0.065 68.393 0.030"
+          rotation="3 135 0"
+          scale="1 1 1"
+          event-set__mouseenter="scale: 1.2 1.2 1.2"
+          event-set__mouseleave="scale: 1 1 1"
+          ujima2
+        >
+        </a-image>
+        <a-plane
+          id="UjiOutToUjiInCaption"
+          position="0.065 68.393 0.030"
+          rotation="0 158 0"
+          height=".18"
+          width=".8"
+          color="#191817"
+          text="value: Enter to Ujima LLC; width: 2; align: center"
+        ></a-plane>
+        <!-- End of Takes you from Ujima Outside to Ujima Inside  -->
+
+        <!-- Ujima Outside Definition Icon -->
+        <!-- Credit: https://www.facebook.com/Virginia-Tech-Ujima-Living-Learning-Community-126220482553838/-->
+        <a-image
+          id="ujiOutMean"
+          src="#meaningIcon"
+          position="0.065 68.393 0.030"
+          scale="1 1 1"
+          rotation="0 -90 0"
+          event-set__mouseenter="scale: 1.2 1.2 1.2"
+          event-set__mouseleave="scale: 1 1 1"
+          ujioutlogomodal
+        >
+        </a-image>
+        
+        <div class="ujioutlogomodal">
+          <span class="closeujioutmodal">&times;</span>
+          <img
+            class="modal-uji-outlogo"
+            id="ujilogo"
+            src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FujimaOutside-2.png?v=1607294053034"
+            style="width:400px;height:500px;"
+            alt="5 Pillars of Ujima Living Learning Community"
+          />
+          <div id="captionujioutmodal"></div>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+        </div>
+        
+        
+        
+        
+        <!-- End of Ujima Outside Definition Icon -->
+      </a-entity>
+      <!-- End of Ujima Outside Scene Elements -->
+
+      
+      
+      
+      
+      
+      
+      
+      
+           
+      
+      
+      
+      
+      
+      
+      
+      <!-- Ujima Inside Scene Elements -->
+      <a-entity id="ujima2Elements" class="uji2" visible="false">
+        
+        
+        
+        <!-- Modal: Ujima Gallery -->
+        <div class="modalujigallery">
+          <span class="closeujigallery">&times;</span>
+          <img
+            class="uji-modal-gallery"
+            id="ujipicmember"
+            src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FujiActi2.jpg?v=1607306626857"
+            style="width:700px;height:500px;"
+            alt="Members of Ujima LLC"
+          />
+
+          <a class="prev3">&#10094;</a>
+          <a class="next3">&#10095;</a>
+
+          <div id="ujiCaption"></div>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+          
+        </div>
+
+        <a-image
+          id="uji-image-gallery-hotspot"
+          src="#galleryIcon"
+          position="0.065 68.393 0.030"
+          scale="1 1 1"
+          rotation="0 0 0"
+          event-set__mouseenter="scale: 1.2 1.2 1.2"
+          event-set__mouseleave="scale: 1 1 1"
+          ujiinsidegallery01mod
+        >
+        </a-image>
+        <!-- End of Modal: Ujima Gallery -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+       <!-- Modal: Ujima Gallery -->
+        <div class="modalujimeangallery">
+          <span class="closeujimeangallery">&times;</span>
+          <img
+            class="ujimean-modal-gallery"
+            id="ujimeanpicmember"
+            src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2Fujimean-1.png?v=1607383535125"
+            style="width:400px;height:500px;"
+            alt="   "
+          />
+
+          <a class="prev4">&#10094;</a>
+          <a class="next4">&#10095;</a>
+
+          <div id="ujimeanCaption"></div>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+          <pre> </pre>
+        </div>
+
+        <a-image
+          id="ujimean-image-gallery-hotspot"
+          src="#galleryIcon"
+          position="-6.0 1.6 4.5"
+          scale="1 1 1"
+          rotation="0 120 0"
+          event-set__mouseenter="scale: 1.2 1.2 1.2"
+          event-set__mouseleave="scale: 1 1 1"
+          ujiinsidegallery02mod
+        >
+        </a-image>
+        <!-- End of Modal: Ujima Gallery -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        <!-- Modal: Ujima Video Interview -->
+        <div class="ujimodal-video">
+          <span class="closeujivideo">&times;</span>
+          <iframe
+            class="modal-ujivideo"
+            width="1000"
+            height="500"
+            src="https://www.youtube.com/embed/qzQHtbS2kBk"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <a-image
+          id="uji-video-hotspot"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FyouTubeIcon.png?v=1607290916352"
+          position="0.065 68.393 0.030"
+          scale="1 1 1"
+          rotation="0 180 0"
+          event-set__mouseenter="scale: 1.2 1.2 1.2"
+          event-set__mouseleave="scale: 1 1 1"
+          ujivideo
+        >
+        </a-image>
+        <!--End of Modal: Ujima Video Interview -->
+
+        <!-- End: Ujima Video Hotspot-->
+
+        <!-- Start: Takes you from Ujima Inside to Ujima Outside -->
+        <a-image
+          id="ujiInToUjiOut"
+          src="#hotspot"
+          position="0.065 68.393 0.030"
+          rotation="3 -30 0"
+          scale="1 1 1"
+          event-set__mouseenter="scale: 1.3 1.3 1.3"
+          event-set__mouseleave="scale: 1 1 1"
+          ujima1
+        >
+        </a-image>
+        <a-plane
+          id="UjiInToUjiOutCaption"
+          position="0.065 68.393 0.030"
+          rotation="0 -10 0"
+          height=".3"
+          width="1.3"
+          color="#191817"
+          text="value: Exit to Ujima Entrance; width: 3; align: center"
+        ></a-plane>
+        <!-- End: Takes you from Ujima Inside to Ujima Outside -->
+        
+        
+        
+        
+        
+        <a-image
+          id="UjiInToEnd"
+          src="#hotspot"
+          position="0.065 68.393 0.030"
+          rotation="0 45 0"
+          scale="1 1 1"
+          event-set__mouseenter="scale: 1.3 1.3 1.3"
+          event-set__mouseleave="scale: 1 1 1"
+          end
+        >
+        </a-image>
+        <a-plane
+          id="UjiInToEndCaption"
+          position="0.065 68.393 0.030"
+          rotation="0 240 0"
+          height=".6"
+          width="3.2"
+          color="#191817"
+          text="value: Go outside to end the tour; width: 6; align: center"
+        ></a-plane>
+
+        
+      </a-entity>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      
+      
+      <a-entity id="endElements" class="end" visible="false">
+        
+        <a-image
+          id="EndToUjiIn"
+          src="#hotspot"
+          position="0.065 68.393 0.030"
+          rotation="0 120 0"
+          scale="1 1 1"
+          event-set__mouseenter="scale: 1.3 1.3 1.3"
+          event-set__mouseleave="scale: 1 1 1"
+          ujima2
+        >
+        </a-image>
+        <a-plane
+          id="EndToUjiInCaption"
+          position="0.065 68.393 0.030"
+          rotation="0 -45 0"
+          height=".3"
+          width="2.3"
+          color="#191817"
+          text="value: Go to Ujima Inside; width: 6; align: center"
+        ></a-plane>
+        
+        
+        
+        
+        
+        <div class="contributormodal">
+
+            <!-- Modal content -->
+            <div class="modal-contributor">
+              <span class="closecontributor">&times;</span>
+                <h1> Creators </h1>
+                <pre> </pre>
+                <p class ="name"> Taufiq Humayun Chowdhury </p>
+                <p class ="bio"> Teaching Assistant, VT Department of Computer Science | B.S. Computer Science | Minor Mathematics | VT Class of 2020 </p>
+                <pre> </pre>
+               
+                <p class ="name"> Yesrat Rahman </p>
+                <p class ="bio"> B.S. Computer Science | Minor Mathematics | VT Class of 2020 </p>
+                <pre> </pre>
+              
+                <p class ="name"> Pablo Vanegas  </p>
+                <p class ="bio"> B.S. Computer Science | VT Class of 2021 </p>
+                <pre> </pre>
+                <pre> </pre>
+                <pre> </pre>
+                
+              
+                <h1> Contributors </h1>
+                <pre> </pre>
+                <p class ="name"> Paul Quigley, Ph.D. </p>
+                <p class ="bio"> James I. Robertson, Jr. Associate Professor of Civil War Studies | Director, Virginia Center for Civil War Studies, History Department, VT</p>
+                <pre> </pre>
+                <p class ="name"> Todd Ogle, Ph.D. </p>
+                <p class ="bio"> Executive Director, Applied Research in Immersive Environments and Simulations/ARIES Program, VT University Libraries </p>
+                <pre> </pre>
+                <p class ="name"> Anza L. Mitchell </p>
+                <p class ="bio"> Graduate Assistant, Council on VT History | Science Education Graduate Student, VT School of Education </p>
+                <pre> </pre>
+                <p class ="name"> Kenny Barnes </p>
+                <p class ="bio"> Historical Research Assistant, VT Department of History | Teaching Assistant, VT Department of Africana Studies | B.A. Sociology & History, VT Class of 2021 </p>
+                <pre> </pre>
+                <p class ="name"> Nicolas Gutkowski </p>
+                <p class ="bio"> Graduate Assistant, VT Department of Computer Science | M.S. Computer Science, VT </p>
+                <pre> </pre>
+                <pre> </pre>
+                <pre> </pre>
+              
+              
+                <h1> Others </h1>
+                <pre> </pre>
+                <p class ="name"> Sang Won Lee, Ph.D. </p>
+                <p class ="bio"> Assistant Professor, VT Department of Computer Science </p>
+                <pre> </pre>
+               
+                <p class ="name"> Rafael N. C. Patrick, Ph.D </p>
+                <p class ="bio"> Human Factors Psychology & Systems Engineering | Research Assistant Professor - ISE Human Factors Group, VT Grado Department of Industrial and Systems Engineering </p>
+                <pre> </pre>
+              
+                <p class ="name"> Quentin T. Baldwin  </p>
+                <p class ="bio"> Senior Project Manager | Master Collaborator | Graduate Student, VT Pamplin College of Business </p>
+                <pre> </pre>
+                <pre> </pre>
+                <pre> </pre>
+              
+            </div>
+
+        </div>
+        
+        <a-image
+          id="contributor-hotspot"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FcontributorIcon.png?v=1607540104505"
+          position="0.065 68.393 0.030"
+          scale="1 1 1"
+          rotation="0 105 0"
+          event-set__mouseenter="scale: 1.2 1.2 1.2"
+          event-set__mouseleave="scale: 1 1 1"
+          contributor
+        >
+        </a-image>
+        
+        
+        
+        
+        
+        <div class="resourcemodal">
+
+            <!-- Modal content -->
+            <div class="modal-resource">
+              <span class="closeresource">&times;</span>
+                <h1> External Resources </h1>
+                <pre> </pre>
+                <p> <a href="https://vtnews.vt.edu/articles/2020/12/inclusive-peddrew-profile.html?utm_source=cmpgn_news&utm_medium=email&utm_campaign=vtUnirelNewsStudentCMP_student-120920%20copy&fbclid=IwAR2rwCPa7TofQWiMLJn_uZkSwxf_0_Ul1SGJQu_5WzF4jV1X5W4QYN_kF9I" target="_blank"> Irving Peddrew discusses his experience as Virginia Tech's first Black student </a> </p>
+                <p> <a href="https://vtnews.vt.edu/articles/2010/08/081110-coe-yates-memoriam.html" target="_blank">In memoriam: Charlie L. Yates, Virginia Tech’s first African American graduate </a></p>
+                <p> <a href="https://vtspecialcollections.wordpress.com/tag/peddrew-yates-hall/" target="_blank">Information about Peddrew-Yates Hall </a></p>
+                <p> <a href="https://vt.edu/about/locations/buildings/peddrew-yates-residence-hall.html#:~:text=Peddrew%2DYates%20Hall%20was%20built,of%20Virginia%20Tech%20in%201958" target="_blank">History of Peddrew-Yates Hall Along with Ujima LLC </a></p>
+                <p> <a href="https://vt150.omeka.net/exhibits/show/integration-at-virginia-tech" target="_blank">Creating Home: A History of Black Inclusion and Community Building at Virginia Tech </a></p>
+                <p> <a href="https://vt150.omeka.net/exhibits/show/hokie-women-of-color" target="_blank">Hokie Women of Color: Profiles in Achievement </a></p>
+                <p> <a href="https://www.vtmag.vt.edu/fall97/feature1.html" target="_blank">The Desegregation of Virginia Tech </a></p>
+                <p> <a href="https://www.vtmag.vt.edu/spring03/feature2.html" target="_blank">Paving the way: African Americans at Virginia Tech </a></p>
+                <p> <a href="https://llp.vt.edu/llc/ujima.html" target="_blank">Ujima Living Learning Community Official Website </a></p>
+                <p> <a href="https://www.facebook.com/Virginia-Tech-Ujima-Living-Learning-Community-126220482553838" target="_blank">Ujima LLC Facebook Page </a></p>
+                <p> <a href="http://digitalsc.lib.vt.edu/items/show/10146" target="_blank">Oral History with Dr. Charles Yates </a></p>
+                <p> <a href="http://digitalsc.lib.vt.edu/items/show/10491" target="_blank">Oral History with Irving Linwood Peddrew III </a></p>
+                <pre> </pre>
+                <pre> </pre>
+            </div>
+
+        </div>
+        
+        <a-image
+          id="resource-hotspot"
+          src="https://cdn.glitch.com/38e0286a-5c71-4336-975e-225b675f6ada%2FlinkIcon.png?v=1607636106269"
+          position="0.065 68.393 0.030"
+          scale="1 1 1"
+          rotation="0 240 0"
+          event-set__mouseenter="scale: 1.2 1.2 1.2"
+          event-set__mouseleave="scale: 1 1 1"
+          resource
+        >
+        </a-image>
+       
+        
+      </a-entity>
+      
+    
+    </a-scene>
+  </body>
+</html>
