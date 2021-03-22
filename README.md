@@ -3,7 +3,9 @@ Interactive 360 Virtual Tour of the Peddrew-Yates Hall: A History of Inclusion o
 
 Oct 2020 – Dec 2020
 
-Project descriptionAlong with two other VT Computer Science undergrad student, I created an interactive and immersive website which will give the users a virtual tour to the historical building, Paddrew-Yates Hall related to Virginia Tech Black Student Community. Anyone who is interested in the history of Black students at VT, can go to the website and experience a virtual tour using their phones, computers, even with VR headsets. This project honors the African-American community at VT and acknowledges the struggles and sufferings they went through since the 1950's, and how it has changed over the years.
+Project description: 
+
+Along with two other VT Computer Science undergrad student, I created an interactive and immersive website which will give the users a virtual tour to the historical building, Paddrew-Yates Hall related to Virginia Tech Black Student Community. Anyone who is interested in the history of Black students at VT, can go to the website and experience a virtual tour using their phones, computers, even with VR headsets. This project honors the African-American community at VT and acknowledges the struggles and sufferings they went through since the 1950's, and how it has changed over the years.
 The tools used are VR development web framework Aframe, WebXR which is based on Aframe. The web developer tool used Glitch and used GoPro Fusion Camera, GoPro VR player, and GoPro Fusion Studio to edit, visualize the 360 degree photos and videos. The programming language used are HTML, CSS, and JavaScript.
 More information can be found at: https://wordpress.cs.vt.edu/ccs2020f/2020/12/13/vt-360/
 See project Interactive 360 Virtual Tour of the Peddrew-Yates Hall: A History of Inclusion of African-American Community at Virginia Tech
